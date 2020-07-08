@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 100px;
+    min-width: 100%;
+    min-height: 100%;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    cursor: inherit;
+    display: block;
+}
+      </style>
+    </head>
+    <body>
+        <div class="fixed-action-btn btn-file">
+            <a class="btn-floating btn red">
+              <i class="large material-icons">add</i>
+              <form action="" id="upload_form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" id="myfile" name="myfile" multiple><br><br>
+                <input type="submit">
+              </form>
+
+            </a>
+          </div>
+      <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+$('#myfile').change(function() {
+      $('#upload_form').submit();
+      console.log("submitted");
+  });
+
+</script>
+    </body>
+  </html>
+        
